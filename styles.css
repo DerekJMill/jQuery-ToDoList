@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'lato';
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #161117;
+    background-image: url(images/todo_background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.todo-container {
+    width: 60%;
+    padding: 100px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(0,0,0,0.4);
+    backdrop-filter: blur(3px);
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.input .form-control {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    height: 50px;
+    border-radius: 5px;
+    width: 90%;
+    padding: 0px 20px;
+    font-size: 16px;
+    color: #363636;
+    box-shadow: 
+    -4px -4px 10px rgba(255, 255, 255, 0.76),
+    4px 4px 10px rgba(165, 165, 165, 0.8),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.76),
+    inset 4px 4px 10px rgba(165, 165, 165, 0.8);
+}
+
+.input .form-control:focus {
+    outline: none;
+}
+
+.add .material-icons {
+    background: #363636;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 50%;
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    color: #363636;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 15px;
+    box-shadow: 0px 5px 10px rgb(0,0,0,0.3);
+}
+
+.left-cont input {
+    display: none;
+    cursor: pointer;
+}
+
+.left-cont label {
+    position: relative;
+    cursor: pointer;
+}
+
+.left-cont label:before {
+    content: '';
+    padding: 11px;
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+    vertical-align: middle;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(165, 165, 165);
+    border-radius: 3px;
+}
+
+.left-cont input:checked + label:before {
+    background: #363636;
+}
+
+.left-cont input:checked + label:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 4px;
+    left: 8px;
+    width: 5px;
+    height: 12px;
+    border: solid white;
+    border-width: 0px 2px 2px 0px;
+    transform: rotate(45deg);
+}
+
+.remove {
+    color: #ff0047;
+    cursor: pointer;
+    line-height: 1;
+    transform: translateX(48px);
+    transition: .5s;
+}
+
+.active {
+    transform: translateX(0px);
+    transition: .5s;
+}
